@@ -1,0 +1,509 @@
+/* ============================================================
+   InsightsPatternsCard — Clinical Insights with Collapsible Patterns
+   Structure: Summary → Collapsed Cards → Expandable Deep Dive
+   ============================================================ */
+
+.card {
+  width: 100%;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Header
+   ───────────────────────────────────────────────────────────── */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-4);
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.headerLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.title {
+  font-size: var(--font-lg);
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.poweredBy {
+  font-size: var(--font-xs);
+  font-weight: 500;
+  color: var(--color-text-muted);
+  letter-spacing: 0.01em;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  background: var(--color-brand-light);
+  color: var(--color-brand-dark);
+  font-size: var(--font-xs);
+  font-weight: 600;
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Empty State
+   ───────────────────────────────────────────────────────────── */
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-8) var(--space-4);
+  text-align: center;
+}
+
+.emptyIcon {
+  width: 32px;
+  height: 32px;
+  color: var(--color-success);
+  margin-bottom: var(--space-3);
+}
+
+.emptyText {
+  font-size: var(--font-base);
+  font-weight: 500;
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-1);
+}
+
+.emptySubtext {
+  font-size: var(--font-sm);
+  color: var(--color-text-muted);
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Overall Clinical Summary
+   ───────────────────────────────────────────────────────────── */
+.summarySection {
+  padding: var(--space-4);
+  background: linear-gradient(135deg, var(--color-bg-hover) 0%, var(--color-bg-card) 100%);
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.summaryStatus {
+  font-size: var(--font-sm);
+  font-weight: 600;
+  color: var(--color-warning);
+  margin-bottom: var(--space-2);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.summaryStatus::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.summaryText {
+  font-size: var(--font-md);
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Patterns Section
+   ───────────────────────────────────────────────────────────── */
+.patternsSection {
+  padding: var(--space-4);
+}
+
+.patternsList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Pattern Card — Collapsible Container
+   ───────────────────────────────────────────────────────────── */
+.patternCard {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+.patternCard:hover {
+  border-color: var(--color-border);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.patternCard.highlighted {
+  border-color: var(--color-brand);
+  box-shadow: 0 0 0 2px var(--color-brand-light);
+}
+
+/* Severity left border accent */
+.patternCard.high {
+  border-left: 3px solid var(--color-danger);
+}
+
+.patternCard.moderate {
+  border-left: 3px solid var(--color-warning);
+}
+
+.patternCard.low {
+  border-left: 3px solid var(--color-success);
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Pattern Header — Collapsed View (clickable)
+   ───────────────────────────────────────────────────────────── */
+.patternHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.1s ease;
+}
+
+.patternHeader:hover {
+  background: var(--color-bg-hover);
+}
+
+.patternLeft {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex: 1;
+  min-width: 0;
+}
+
+/* Severity dot */
+.severityDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.dotHigh {
+  background: var(--color-danger);
+  box-shadow: 0 0 0 3px rgba(229, 62, 62, 0.15);
+}
+
+.dotModerate {
+  background: var(--color-warning);
+  box-shadow: 0 0 0 3px rgba(217, 119, 6, 0.15);
+}
+
+.dotLow {
+  background: var(--color-success);
+  box-shadow: 0 0 0 3px rgba(56, 161, 105, 0.15);
+}
+
+/* Pattern icon */
+.patternIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.iconHigh {
+  background: rgba(229, 62, 62, 0.1);
+  color: var(--color-danger);
+}
+
+.iconModerate {
+  background: rgba(217, 119, 6, 0.1);
+  color: var(--color-warning);
+}
+
+.iconLow {
+  background: rgba(56, 161, 105, 0.1);
+  color: var(--color-success);
+}
+
+/* Pattern info */
+.patternInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.patternName {
+  font-size: var(--font-base);
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.patternPreview {
+  font-size: var(--font-sm);
+  color: var(--color-text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Right side */
+.patternRight {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-shrink: 0;
+}
+
+/* Severity badge */
+.severityBadge {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 8px;
+  font-size: 10px;
+  font-weight: 600;
+  border-radius: 4px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.badgeHigh {
+  background: rgba(229, 62, 62, 0.1);
+  color: var(--color-danger);
+}
+
+.badgeModerate {
+  background: rgba(217, 119, 6, 0.1);
+  color: var(--color-warning);
+}
+
+.badgeLow {
+  background: rgba(56, 161, 105, 0.1);
+  color: var(--color-success);
+}
+
+/* Expand icon */
+.expandIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-muted);
+  transition: color 0.1s ease;
+}
+
+.patternHeader:hover .expandIcon {
+  color: var(--color-text-secondary);
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Deep Dive — Expanded View
+   ───────────────────────────────────────────────────────────── */
+.deepDive {
+  padding: var(--space-3) var(--space-4) var(--space-4);
+  border-top: 1px solid var(--color-border-light);
+  background: var(--color-bg-page);
+}
+
+
+.deepDiveSection {
+  padding-top: var(--space-3);
+}
+
+.deepDiveSection + .deepDiveSection {
+  border-top: 1px solid var(--color-border-light);
+  margin-top: var(--space-3);
+  padding-top: var(--space-3);
+}
+
+/* Section header */
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-2);
+}
+
+.sectionIcon {
+  color: var(--color-text-muted);
+}
+
+.sectionLabel {
+  font-size: var(--font-xs);
+  font-weight: 600;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Evidence List
+   ───────────────────────────────────────────────────────────── */
+.evidenceList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.evidenceItem {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+}
+
+.evidenceBullet {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--color-brand);
+  margin-top: 6px;
+  flex-shrink: 0;
+}
+
+.evidenceText {
+  font-size: var(--font-sm);
+  color: var(--color-text-secondary);
+  line-height: 1.4;
+}
+
+.evidenceText strong {
+  color: var(--color-text-primary);
+  font-weight: 600;
+}
+
+.evidenceText strong.exceeded {
+  color: var(--color-danger);
+}
+
+.evidenceThreshold {
+  color: var(--color-text-muted);
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Panther Framework Block
+   ───────────────────────────────────────────────────────────── */
+.frameworkBlock {
+  display: flex;
+  align-items: center;
+}
+
+.frameworkRule {
+  font-size: var(--font-sm);
+  font-weight: 500;
+  color: var(--color-text-primary);
+  padding: var(--space-2) var(--space-3);
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border-light);
+  border-left: 3px solid var(--color-brand);
+  border-radius: 4px;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Action Block
+   ───────────────────────────────────────────────────────────── */
+.actionTypeBadge {
+  margin-left: auto;
+  font-size: 9px;
+  font-weight: 600;
+  color: var(--color-brand-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  background: var(--color-brand-light);
+  padding: 2px 8px;
+  border-radius: 10px;
+}
+
+.actionBlock {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  background: var(--color-brand-light);
+  padding: var(--space-3);
+  border-radius: 6px;
+  border-left: 3px solid var(--color-brand);
+}
+
+.actionSetting {
+  font-size: var(--font-sm);
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.actionChange {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  background: var(--color-bg-card);
+  padding: var(--space-2) var(--space-4);
+  border-radius: 6px;
+  border: 1px solid var(--color-border-light);
+  margin-top: var(--space-1);
+}
+
+.actionCurrent {
+  font-size: var(--font-lg);
+  font-weight: 500;
+  color: var(--color-text-muted);
+  font-family: 'SF Mono', 'Consolas', monospace;
+}
+
+.actionArrow {
+  font-size: var(--font-xl);
+  color: var(--color-brand);
+  font-weight: 600;
+}
+
+.actionSuggested {
+  font-size: var(--font-lg);
+  font-weight: 700;
+  color: var(--color-brand-dark);
+  font-family: 'SF Mono', 'Consolas', monospace;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Rationale
+   ───────────────────────────────────────────────────────────── */
+.rationaleText {
+  font-size: var(--font-sm);
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+  margin: 0;
+  font-style: italic;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Responsive
+   ───────────────────────────────────────────────────────────── */
+@media (max-width: 600px) {
+  .patternHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-2);
+  }
+
+  .patternRight {
+    width: 100%;
+    justify-content: space-between;
+    padding-left: calc(8px + var(--space-3) + 32px + var(--space-3));
+  }
+
+  .patternPreview {
+    white-space: normal;
+  }
+}

@@ -1,0 +1,52 @@
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px;
+  padding: 3px 0;
+  border-left: 2px solid transparent;
+  padding-left: 4px;
+  transition: background 0.1s, border-color 0.1s;
+}
+
+.row:hover {
+  background: var(--color-bg-hover);
+  border-radius: 0 4px 4px 0;
+}
+
+.indent {
+  padding-left: 16px;
+}
+
+/* Scenario-driven highlight — activated via props */
+.highlighted {
+  border-left-color: var(--color-brand);
+  background: var(--color-brand-light);
+  border-radius: 0 4px 4px 0;
+}
+
+.label {
+  font-size: var(--font-md);
+  color: var(--color-text-secondary);
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.sublabel {
+  font-size: var(--font-xs);
+  color: var(--color-text-muted);
+}
+
+.value {
+  font-size: var(--font-md);
+  font-weight: 600;
+  color: var(--color-text-primary);
+  text-align: right;
+  white-space: nowrap;
+}
+
+.muted {
+  font-weight: 400;
+  color: var(--color-text-muted);
+}

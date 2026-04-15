@@ -1,0 +1,118 @@
+.bar {
+  background: #fff;
+  border-bottom: 1px solid var(--color-border);
+  padding: 8px 0;
+}
+
+.inner {
+  max-width: var(--page-max-width);
+  margin: 0 auto;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* Left */
+.left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.rangeDropdown {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 10px;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  font-size: var(--font-sm);
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  background: #fff;
+  white-space: nowrap;
+}
+
+.navGroup {
+  display: flex;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.navBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  background: #fff;
+  cursor: pointer;
+  transition: background 0.1s;
+}
+
+.navBtn:hover {
+  background: var(--color-bg-hover);
+}
+
+.navBtn + .navBtn {
+  border-left: 1px solid var(--color-border);
+}
+
+.dateInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.dateRange {
+  font-size: var(--font-base);
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.dateBreadcrumb {
+  font-size: var(--font-xs);
+  color: var(--color-text-muted);
+}
+
+/* Warning notice */
+.warning {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex: 1;
+  min-width: 0;
+}
+
+.warningDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-warning-dot);
+  flex-shrink: 0;
+}
+
+.warningText {
+  font-size: var(--font-sm);
+  color: var(--color-text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.warningLink {
+  font-size: var(--font-sm);
+  font-weight: 500;
+  color: var(--color-brand);
+  white-space: nowrap;
+}
+
+/* Right */
+.right {
+  margin-left: auto;
+  flex-shrink: 0;
+}

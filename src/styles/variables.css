@@ -1,0 +1,97 @@
+/* ============================================================
+   Design Tokens — Glooko OP5 Clinical Prototype
+   All color, spacing, and typography variables live here.
+   ============================================================ */
+
+:root {
+  /* Brand */
+  --color-brand:        #0B9AE0;
+  --color-brand-dark:   #0079C1;
+  --color-brand-light:  #E6F5FD;
+  --color-brand-muted:  #BEE3F8;
+
+  /* Neutral UI */
+  --color-bg-page:      #F0F2F7;
+  --color-bg-card:      #FFFFFF;
+  --color-bg-hover:     #F7F9FB;
+  --color-border:       #DDE2EA;
+  --color-border-light: #EDF0F5;
+  --color-divider:      #E8ECF1;
+
+  /* Text */
+  --color-text-primary:   #1A202C;
+  --color-text-secondary: #4A5568;
+  --color-text-muted:     #8A96A3;
+  --color-text-link:      #0B9AE0;
+
+  /* Glucose range colors */
+  --color-glucose-very-high:   #F97316;
+  --color-glucose-high:        #F4BF00;
+  --color-glucose-in-range:    #3CB371;
+  --color-glucose-tight-range: #2E8B57;
+  --color-glucose-low:         #84CC16;
+  --color-glucose-very-low:    #E53E3E;
+
+  /* Insulin / chart colors */
+  --color-basal:           #5B9BD5;
+  --color-bolus:           #A78BFA;
+  --color-bolus-meal:      #5B9BD5;
+  --color-bolus-correction:#F472B6;
+  --color-bolus-manual:    #FBB040;
+
+  /* System/mode colors */
+  --color-mode-auto:     #0B9AE0;
+  --color-mode-activity: #F59E0B;
+  --color-mode-manual:   #CBD5E0;
+
+  /* Status */
+  --color-warning-bg:   #FFFBEB;
+  --color-warning:      #D97706;
+  --color-warning-dot:  #F59E0B;
+  --color-danger:       #E53E3E;
+  --color-success:      #38A169;
+
+  /* Tag variants */
+  --color-tag-blue-bg:    #1A56DB;
+  --color-tag-blue-text:  #FFFFFF;
+  --color-tag-pink-bg:    #E53E3E;
+  --color-tag-pink-text:  #FFFFFF;
+  --color-tag-gray-bg:    #EDF2F7;
+  --color-tag-gray-text:  #4A5568;
+  --color-tag-teal-bg:    #0B9AE0;
+  --color-tag-teal-text:  #FFFFFF;
+
+  /* Nav */
+  --color-nav-bg:       #FFFFFF;
+  --color-nav-border:   #DDE2EA;
+
+  /* Spacing scale */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+
+  /* Card metrics */
+  --card-radius:   8px;
+  --card-padding:  16px;
+  --card-border:   1px solid var(--color-border);
+  --card-shadow:   0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+
+  /* Typography */
+  --font-family:  'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-xs:      11px;
+  --font-sm:      12px;
+  --font-md:      13px;
+  --font-base:    14px;
+  --font-lg:      15px;
+  --font-xl:      16px;
+  --font-2xl:     20px;
+  --font-3xl:     24px;
+
+  /* Layout */
+  --page-max-width: 940px;
+  --page-padding:   0 16px;
+}

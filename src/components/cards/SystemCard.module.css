@@ -1,0 +1,120 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 12px;
+}
+
+.title {
+  font-size: var(--font-base);
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+/* Active time row */
+.activeTimeRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 6px;
+}
+
+.activeTimeLabel {
+  font-size: var(--font-sm);
+  color: var(--color-text-secondary);
+}
+
+.activeTimeValue {
+  font-size: var(--font-base);
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+/* Mode bar */
+.modeBarWrap {
+  margin-bottom: 12px;
+}
+
+/* Mode rows */
+.modeList {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.modeRow {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 6px;
+  padding: 2px 4px;
+  border-radius: 4px;
+  border-left: 2px solid transparent;
+  transition: background 0.1s, border-color 0.1s;
+  min-width: 0;
+}
+
+.modeSubRow {
+  padding-left: 18px;
+}
+
+.highlighted {
+  border-left-color: var(--color-brand);
+  background: var(--color-brand-light);
+}
+
+.modeIndicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.modeLabel {
+  flex: 1;
+  font-size: var(--font-sm);
+  color: var(--color-text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+}
+
+.modeValue {
+  font-size: var(--font-sm);
+  color: var(--color-text-primary);
+  text-align: right;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.modeValue strong {
+  font-weight: 700;
+}
+
+.modeTime {
+  color: var(--color-text-muted);
+  font-size: var(--font-xs);
+  font-weight: 400;
+  display: none;
+}
+
+@media (min-width: 1400px) {
+  .modeTime {
+    display: inline;
+  }
+}
+
+/* Divider */
+.divider {
+  height: 1px;
+  background: var(--color-divider);
+  margin: 10px 0;
+}
+
+/* Settings list */
+.settingsList {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}

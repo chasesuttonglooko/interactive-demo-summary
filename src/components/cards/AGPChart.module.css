@@ -1,0 +1,69 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+
+.titleGroup {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.title {
+  font-size: var(--font-base);
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.axisLabel {
+  font-size: var(--font-xs);
+  color: var(--color-text-muted);
+}
+
+.helpLink {
+  font-size: var(--font-sm);
+  color: var(--color-brand);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* Chart area */
+.chartWrap {
+  width: 100%;
+  overflow: hidden;
+}
+
+.svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Legend */
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 18px;
+  margin-top: 10px;
+  padding-top: 8px;
+  border-top: 1px solid var(--color-divider);
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  font-size: var(--font-xs);
+  color: var(--color-text-secondary);
+}
+
+.legendSwatch {
+  flex-shrink: 0;
+}
+
+.legendLabel {
+  color: var(--color-text-secondary);
+  font-size: var(--font-xs);
+}

@@ -1,0 +1,69 @@
+.grid {
+  display: flex;
+  align-items: stretch;
+}
+
+.col {
+  flex: 1;
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
+}
+
+.sep {
+  width: 1px;
+  background: var(--color-divider);
+  flex-shrink: 0;
+}
+
+.colTitle {
+  font-size: var(--font-sm);
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.dateRange {
+  font-size: var(--font-xs);
+  color: var(--color-text-muted);
+}
+
+/* Diet stats */
+.dietStats {
+  display: flex;
+  gap: 20px;
+  margin-top: 4px;
+}
+
+.dietStat {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.dietValue {
+  font-size: var(--font-xl);
+  font-weight: 700;
+  color: var(--color-text-primary);
+  line-height: 1.1;
+}
+
+.dietUnit {
+  font-size: var(--font-sm);
+  font-weight: 400;
+  color: var(--color-text-secondary);
+  margin-left: 1px;
+}
+
+.dietLabel {
+  font-size: var(--font-xs);
+  color: var(--color-text-muted);
+}
+
+/* Empty state */
+.emptyState {
+  font-size: var(--font-sm);
+  color: var(--color-text-muted);
+  padding-top: 6px;
+}
