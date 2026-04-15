@@ -17,6 +17,77 @@
   overflow-y: auto;
 }
 
+/* Mobile toggle button */
+.mobileToggle {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+  border: none;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(99, 102, 241, 0.4);
+  z-index: 100;
+  align-items: center;
+  justify-content: center;
+}
+
+.closeButton {
+  display: none;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: #9ca3af;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay {
+  display: none;
+}
+
+/* Mobile styles */
+@media (max-width: 900px) {
+  .sidebar {
+    position: fixed;
+    right: -300px;
+    top: 0;
+    z-index: 200;
+    transition: right 0.3s ease;
+    box-shadow: -4px 0 20px rgba(0, 0, 0, 0.3);
+  }
+
+  .sidebar.open {
+    right: 0;
+  }
+
+  .mobileToggle {
+    display: flex;
+  }
+
+  .closeButton {
+    display: flex;
+  }
+
+  .overlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 150;
+  }
+}
+
 /* ─────────────────────────────────────────────────────────────
    Header
    ───────────────────────────────────────────────────────────── */

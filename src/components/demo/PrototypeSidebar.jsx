@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Beaker, ChevronRight, Info, Users } from 'lucide-react'
+import { Beaker, ChevronRight, Info, Users, X, Settings } from 'lucide-react'
 import EngineExplainerModal from './EngineExplainerModal'
 import styles from './PrototypeSidebar.module.css'
 
@@ -17,10 +17,31 @@ import styles from './PrototypeSidebar.module.css'
  */
 export default function PrototypeSidebar({ scenarios = [], activeScenario, onScenarioChange }) {
   const [showExplainer, setShowExplainer] = useState(false)
+  const [isOpen, setIsOpen] = useState(false)
 
   return (
     <>
-      <aside className={styles.sidebar}>
+      {/* Mobile toggle button */}
+      <button
+        className={styles.mobileToggle}
+        onClick={() => setIsOpen(true)}
+        aria-label="Open demo controls"
+      >
+        <Settings size={20} />
+      </button>
+
+      {/* Overlay for mobile */}
+      {isOpen && <div className={styles.overlay} onClick={() => setIsOpen(false)} />}
+
+      <aside className={`${styles.sidebar} ${isOpen ? styles.open : ''}`}>
+        {/* Mobile close button */}
+        <button
+          className={styles.closeButton}
+          onClick={() => setIsOpen(false)}
+          aria-label="Close"
+        >
+          <X size={20} />
+        </button>
         {/* Header */}
         <div className={styles.header}>
           <Beaker size={16} className={styles.headerIcon} />
