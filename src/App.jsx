@@ -36,7 +36,7 @@ function PasswordGate({ onSuccess }) {
     e.preventDefault()
     if (input === PASSWORD) {
       sessionStorage.setItem('authed', 'true')
-      onSuccess()
+      window.location.reload()
     } else {
       setError(true)
       setInput('')
