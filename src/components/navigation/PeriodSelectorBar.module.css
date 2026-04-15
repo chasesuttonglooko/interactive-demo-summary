@@ -116,3 +116,28 @@
   margin-left: auto;
   flex-shrink: 0;
 }
+
+/* Mobile optimizations */
+@media (max-width: 600px) {
+  .inner {
+    padding: 0 12px;
+    gap: 8px;
+  }
+
+  .dateRange {
+    font-size: var(--font-sm);
+  }
+
+  .dateBreadcrumb {
+    display: none;
+  }
+
+  .warning {
+    display: none;
+  }
+
+  .navBtn {
+    width: 36px;
+    height: 36px;
+  }
+}

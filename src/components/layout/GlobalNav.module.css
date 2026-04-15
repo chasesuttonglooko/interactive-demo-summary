@@ -134,3 +134,32 @@
   cursor: pointer;
   opacity: 0.5;
 }
+
+/* Mobile optimizations */
+@media (max-width: 600px) {
+  .inner {
+    padding: 0 12px;
+    height: 44px;
+  }
+
+  .logo {
+    font-size: 18px;
+  }
+
+  .patientDropdown {
+    display: none;
+  }
+
+  .searchWrap {
+    display: none;
+  }
+
+  .clinicInfo {
+    display: none;
+  }
+
+  .avatar {
+    width: 32px;
+    height: 32px;
+  }
+}

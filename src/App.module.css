@@ -70,3 +70,14 @@
     grid-template-columns: 1fr;
   }
 }
+
+@media (max-width: 600px) {
+  .pageBody {
+    padding: 12px;
+    gap: 12px;
+  }
+
+  .statsRow {
+    gap: 12px;
+  }
+}

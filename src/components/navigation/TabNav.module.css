@@ -38,3 +38,21 @@
   border-bottom-color: var(--color-brand);
   font-weight: 600;
 }
+
+/* Mobile optimizations */
+@media (max-width: 600px) {
+  .inner {
+    padding: 0 12px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .nav {
+    min-width: max-content;
+  }
+
+  .tab {
+    padding: 10px 12px;
+    font-size: var(--font-sm);
+  }
+}

@@ -155,3 +155,37 @@
 .syncLabel {
   font-weight: 500;
 }
+
+/* Mobile optimizations */
+@media (max-width: 600px) {
+  .inner {
+    padding: 8px 12px;
+  }
+
+  .patientName {
+    font-size: var(--font-lg);
+  }
+
+  .demoRow {
+    font-size: var(--font-xs);
+    flex-wrap: wrap;
+  }
+
+  .tagRow {
+    gap: 4px;
+  }
+
+  .actions {
+    gap: 2px;
+  }
+
+  .syncBadge {
+    padding: 2px 6px;
+    font-size: 10px;
+  }
+
+  .iconBtn {
+    width: 32px;
+    height: 32px;
+  }
+}
