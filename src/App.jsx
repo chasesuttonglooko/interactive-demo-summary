@@ -63,8 +63,11 @@ function PasswordGate({ onSuccess }) {
       }}>
         <div style={{ textAlign: 'center' }}>
           <h1 style={{ color: '#e4e7eb', fontSize: '20px', fontWeight: 600, margin: 0 }}>
-            Omnipod 5 Prototype
+            Interactive Prototype
           </h1>
+          <h2 style={{ color: '#a5b4fc', fontSize: '14px', fontWeight: 500, margin: '4px 0 0' }}>
+            Initial Decision Support
+          </h2>
           <p style={{ color: '#6b7280', fontSize: '13px', marginTop: '8px' }}>
             Enter password to continue
           </p>
