@@ -61,6 +61,19 @@
   color: var(--color-text-muted);
 }
 
+/* Activity stats */
+.activityStats {
+  display: flex;
+  gap: 20px;
+  margin-top: 4px;
+}
+
+.activityStat {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
 /* Empty state */
 .emptyState {
   font-size: var(--font-sm);

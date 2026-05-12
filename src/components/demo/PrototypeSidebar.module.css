@@ -223,6 +223,11 @@
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.15s ease;
+  text-decoration: none;
+}
+
+.explainerButton + .explainerButton {
+  margin-top: 8px;
 }
 
 .explainerButton:hover {

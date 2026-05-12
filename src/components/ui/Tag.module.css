@@ -29,3 +29,18 @@
   background: var(--color-tag-gray-bg);
   color: var(--color-tag-gray-text);
 }
+
+.green {
+  background: rgba(56, 161, 105, 0.15);
+  color: #38a169;
+}
+
+.orange {
+  background: rgba(237, 137, 54, 0.15);
+  color: #dd6b20;
+}
+
+.yellow {
+  background: rgba(214, 158, 46, 0.15);
+  color: #b7791f;
+}

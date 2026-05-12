@@ -103,12 +103,21 @@ export default function SystemCard({ system }) {
 
       <div className={styles.divider} />
 
-      {/* Pod changes */}
-      <StatRow
-        label="Pod changes"
-        value={String(podChanges)}
-        highlighted={isHighlighted('podChanges')}
-      />
+      {/* Pod/Cartridge changes - adapts based on device type */}
+      {podChanges !== null && podChanges !== undefined && (
+        <StatRow
+          label="Pod changes"
+          value={String(podChanges)}
+          highlighted={isHighlighted('podChanges')}
+        />
+      )}
+      {system.cartridgeChanges !== null && system.cartridgeChanges !== undefined && (
+        <StatRow
+          label="Cartridge changes"
+          value={String(system.cartridgeChanges)}
+          highlighted={isHighlighted('cartridgeChanges')}
+        />
+      )}
     </CardShell>
   )
 }

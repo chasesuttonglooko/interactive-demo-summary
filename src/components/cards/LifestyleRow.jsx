@@ -44,7 +44,16 @@ export default function LifestyleRow({ lifestyle }) {
         <div className={styles.col}>
           <span className={styles.colTitle}>Activity</span>
           {activity ? (
-            <span>{activity}</span>
+            <div className={styles.activityStats}>
+              <div className={styles.activityStat}>
+                <span className={styles.dietValue}>{activity.sessionsPerWeek}</span>
+                <span className={styles.dietLabel}>Sessions / Week</span>
+              </div>
+              <div className={styles.activityStat}>
+                <span className={styles.dietValue}>{activity.avgDuration}</span>
+                <span className={styles.dietLabel}>Avg Duration</span>
+              </div>
+            </div>
           ) : (
             <EmptyState label="activity" />
           )}

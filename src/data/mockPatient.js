@@ -1,8 +1,8 @@
 // ============================================================
-// Mock Patient Data — Glooko OP5 Clinical Prototype
-// All values are placeholder-grade. Scenario wiring happens later.
-// Structure mirrors the scenario JSON schema so props can be
-// swapped in without component changes.
+// Mock Patient Data — Glooko PANTHER Clinical Prototype
+// All values are placeholder-grade. Primary scenario data lives
+// in scenarios.js. This file provides mockCarePrograms and
+// legacy structures for reference.
 // ============================================================
 
 export const mockPatient = {
@@ -130,33 +130,34 @@ export const mockCarePrograms = [
 ];
 
 // ============================================================
-// Clinical Insights — Collapsible Reasoning Engine
-// Structure: Overall Summary + Pattern Cards (collapsed/expanded)
+// Clinical Insights — Legacy Mock Data
+// Primary insight data now lives in scenarios.js with PANTHER
+// 8-pattern taxonomy alignment.
 // ============================================================
 
 export const mockSummaryStatus = 'Moderate Control — Optimization Recommended';
 
 export const mockOverallSummary =
   'Patient demonstrates moderate glycemic control with two primary optimization opportunities identified. ' +
-  'Overnight hypoglycemia and post-prandial hyperglycemia are contributing most significantly to ' +
+  'Fasting/overnight hypoglycemia and around-mealtime hyperglycemia are contributing most significantly to ' +
   'sub-target Time in Range performance (59% vs. 70% goal). Strong automated mode adherence (77%) ' +
   'suggests intervention should focus on therapy settings rather than behavioral correction.';
 
 export const mockInsights = [
   {
     id: 'overnight-hypo',
-    pattern: 'Overnight Hypoglycemia',
+    pattern: 'Fasting/Overnight Hypoglycemia',
     severity: 'high',
     icon: 'hypo',
     preview: '2 overnight low events detected; overnight TBR exceeds recommended threshold.',
     evidence: [
       { metric: 'Hypoglycemic events', value: '2 episodes below 70 mg/dL', threshold: 'between 2–4 AM', status: 'exceeded' },
       { metric: 'Overnight Time Below Range', value: '6%', threshold: 'target <4%', status: 'exceeded' },
-      { metric: 'Panther clinical threshold', value: '<4% overnight TBR' },
+      { metric: 'PANTHER clinical threshold', value: '<4% overnight TBR' },
     ],
     ruleMatch: {
-      protocol: 'Panther OP5',
-      rule: 'Fasting / Overnight Hypoglycemia',
+      protocol: 'PANTHER OP5',
+      rule: 'Fasting/Overnight Hypoglycemia',
     },
     action: {
       type: 'Therapy Adjustment',
@@ -168,8 +169,8 @@ export const mockInsights = [
     rationale: 'Higher overnight target reduces insulin aggressiveness during sleep, lowering nocturnal hypoglycemia risk when symptom response is limited.',
   },
   {
-    id: 'postmeal-hyper',
-    pattern: 'Post-Meal Hyperglycemia',
+    id: 'mealtime-hyper',
+    pattern: 'Around Mealtime Hyperglycemia',
     severity: 'moderate',
     icon: 'hyper',
     preview: 'Recurring glucose spikes 1–3 hrs after lunch and dinner; average peak 215 mg/dL.',
@@ -179,8 +180,8 @@ export const mockInsights = [
       { metric: 'Affected meals', value: 'Lunch and dinner', threshold: 'recurring' },
     ],
     ruleMatch: {
-      protocol: 'Panther OP5',
-      rule: 'Post-Meal Hyperglycemia',
+      protocol: 'PANTHER OP5',
+      rule: 'Around Mealtime Hyperglycemia',
     },
     action: {
       type: 'Therapy Adjustment + Education',

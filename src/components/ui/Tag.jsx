@@ -3,7 +3,7 @@ import styles from './Tag.module.css'
 /**
  * Tag
  * Colored pill badge used in PatientHeader.
- * variant: 'teal' | 'blue' | 'pink' | 'gray'
+ * variant: 'teal' | 'blue' | 'pink' | 'orange' | 'yellow' | 'green' | 'gray'
  */
 export default function Tag({ label, variant = 'gray' }) {
   return (

@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Beaker, ChevronRight, Info, Users, X, Settings } from 'lucide-react'
+import { Beaker, ChevronRight, Info, Users, X, Settings, FileText } from 'lucide-react'
 import EngineExplainerModal from './EngineExplainerModal'
 import styles from './PrototypeSidebar.module.css'
 
@@ -80,6 +80,15 @@ export default function PrototypeSidebar({ scenarios = [], activeScenario, onSce
             <Info size={16} className={styles.explainerIcon} />
             <span className={styles.explainerText}>How This Works</span>
           </button>
+          <a
+            className={styles.explainerButton}
+            href="https://docs.google.com/document/d/1XryVzhDmJSNHQ7fMKbIng6NzY8Cbm9YJLeWLQGlX7p4/edit?tab=t.0"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FileText size={16} className={styles.explainerIcon} />
+            <span className={styles.explainerText}>Regulatory One-Pager</span>
+          </a>
         </div>
 
         {/* Footer */}
